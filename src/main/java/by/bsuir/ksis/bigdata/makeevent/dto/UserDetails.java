@@ -1,11 +1,13 @@
 package by.bsuir.ksis.bigdata.makeevent.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 
-public class UserData {
+public class UserDetails {
     @Id
     private String id;
     private String email;
+    @JsonIgnore
     private String password;
     private String firstName;
     private String lastName;
