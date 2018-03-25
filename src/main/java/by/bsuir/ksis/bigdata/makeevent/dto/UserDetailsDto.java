@@ -1,9 +1,10 @@
 package by.bsuir.ksis.bigdata.makeevent.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.bson.Document;
 import org.springframework.data.annotation.Id;
 
-public class UserDetails {
+public class UserDetailsDto extends Document {
     @Id
     private String id;
     private String email;

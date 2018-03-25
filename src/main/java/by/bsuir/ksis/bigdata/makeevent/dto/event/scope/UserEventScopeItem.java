@@ -1,12 +1,12 @@
 package by.bsuir.ksis.bigdata.makeevent.dto.event.scope;
 
-import by.bsuir.ksis.bigdata.makeevent.dto.UserDetails;
+import by.bsuir.ksis.bigdata.makeevent.dto.UserDetailsDto;
 
 public class UserEventScopeItem implements EventScopeItem {
-    private UserDetails userDetails;
+    private UserDetailsDto userDetailsDto;
 
-    public UserEventScopeItem(UserDetails userDetails) {
-        this.userDetails = userDetails;
+    public UserEventScopeItem(UserDetailsDto userDetailsDto) {
+        this.userDetailsDto = userDetailsDto;
     }
 
     @Override
@@ -14,11 +14,11 @@ public class UserEventScopeItem implements EventScopeItem {
         return EventScope.USER;
     }
 
-    public UserDetails getUserDetails() {
-        return userDetails;
+    public UserDetailsDto getUserDetailsDto() {
+        return userDetailsDto;
     }
 
-    public void setUserDetails(UserDetails userDetails) {
-        this.userDetails = userDetails;
+    public void setUserDetailsDto(UserDetailsDto userDetailsDto) {
+        this.userDetailsDto = userDetailsDto;
     }
 }

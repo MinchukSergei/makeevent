@@ -1,6 +1,6 @@
 package by.bsuir.ksis.bigdata.makeevent.dto.event;
 
-import by.bsuir.ksis.bigdata.makeevent.dto.UserDetails;
+import by.bsuir.ksis.bigdata.makeevent.dto.UserDetailsDto;
 import by.bsuir.ksis.bigdata.makeevent.dto.event.scope.EventScopeItem;
 import org.springframework.data.annotation.Id;
 
@@ -15,8 +15,8 @@ public class EventDto {
     private Double mapCoordinateY;
     private Calendar date;
     private String description;
-    private UserDetails owner;
-    private List<UserDetails> participants;
+    private UserDetailsDto owner;
+    private List<UserDetailsDto> participants;
     private List<EventScopeItem> eventScopeItems;
 
     public String getId() {
@@ -67,19 +67,19 @@ public class EventDto {
         this.description = description;
     }
 
-    public UserDetails getOwner() {
+    public UserDetailsDto getOwner() {
         return owner;
     }
 
-    public void setOwner(UserDetails owner) {
+    public void setOwner(UserDetailsDto owner) {
         this.owner = owner;
     }
 
-    public List<UserDetails> getParticipants() {
+    public List<UserDetailsDto> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<UserDetails> participants) {
+    public void setParticipants(List<UserDetailsDto> participants) {
         this.participants = participants;
     }
 
