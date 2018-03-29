@@ -1,12 +1,13 @@
-package by.bsuir.ksis.bigdata.makeevent.dto.event;
+package by.bsuir.ksis.bigdata.makeevent.dto;
 
-import by.bsuir.ksis.bigdata.makeevent.dto.UserDetailsDto;
-import by.bsuir.ksis.bigdata.makeevent.dto.event.scope.EventScopeItem;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Calendar;
 import java.util.List;
 
+@Document
 public class EventDto {
     @Id
     private String id;
@@ -15,9 +16,10 @@ public class EventDto {
     private Double mapCoordinateY;
     private Calendar date;
     private String description;
+    @DBRef
     private UserDetailsDto owner;
+    @DBRef(lazy = true)
     private List<UserDetailsDto> participants;
-    private List<EventScopeItem> eventScopeItems;
 
     public String getId() {
         return id;
@@ -81,13 +83,5 @@ public class EventDto {
 
     public void setParticipants(List<UserDetailsDto> participants) {
         this.participants = participants;
-    }
-
-    public List<EventScopeItem> getEventScopeItems() {
-        return eventScopeItems;
-    }
-
-    public void setEventScopeItems(List<EventScopeItem> eventScopeItems) {
-        this.eventScopeItems = eventScopeItems;
     }
 }

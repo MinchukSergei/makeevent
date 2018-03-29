@@ -1,4 +1,4 @@
 package by.bsuir.ksis.bigdata.makeevent.service;
 
-public interface CustomUserDetailsService {
+public interface AuthUserDetailsService {
 }

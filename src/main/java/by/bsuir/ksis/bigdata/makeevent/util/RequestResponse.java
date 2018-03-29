@@ -6,7 +6,7 @@ import java.util.Map;
 public class RequestResponse<T> {
     private boolean success;
     private Map<String, T> requestData;
-    private Map<String, Object> exceptions;
+    private Map<String, Object> errors;
 
     public boolean isSuccess() {
         return success;
@@ -24,12 +24,12 @@ public class RequestResponse<T> {
         this.requestData = requestData;
     }
 
-    public Map<String, Object> getExceptions() {
-        return exceptions;
+    public Map<String, Object> getErrors() {
+        return errors;
     }
 
-    public void setExceptions(Map<String, Object> exceptions) {
-        this.exceptions = exceptions;
+    public void setErrors(Map<String, Object> errors) {
+        this.errors = errors;
     }
 
     public static <T> RequestResponse<T> createSuccessResponse() {
@@ -47,7 +47,7 @@ public class RequestResponse<T> {
     private static <T> RequestResponse<T> createResponse() {
         RequestResponse<T> requestResponse = new RequestResponse<>();
         requestResponse.setRequestData(new HashMap<>());
-        requestResponse.setExceptions(new HashMap<>());
+        requestResponse.setErrors(new HashMap<>());
         return requestResponse;
     }
 }

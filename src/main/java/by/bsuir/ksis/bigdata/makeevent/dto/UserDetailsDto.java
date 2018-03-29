@@ -1,10 +1,14 @@
 package by.bsuir.ksis.bigdata.makeevent.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.bson.Document;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-public class UserDetailsDto extends Document {
+import java.util.List;
+
+@Document
+public class UserDetailsDto {
     @Id
     private String id;
     private String email;
@@ -12,6 +16,12 @@ public class UserDetailsDto extends Document {
     private String password;
     private String firstName;
     private String lastName;
+    @DBRef(lazy = true)
+    @JsonIgnore
+    private List<GroupDto> groups;
+    @DBRef(lazy = true)
+    @JsonIgnore
+    private List<EventDto> events;
 
     public String getId() {
         return id;
@@ -51,5 +61,21 @@ public class UserDetailsDto extends Document {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public List<GroupDto> getGroups() {
+        return groups;
+    }
+
+    public void setGroups(List<GroupDto> groups) {
+        this.groups = groups;
+    }
+
+    public List<EventDto> getEvents() {
+        return events;
+    }
+
+    public void setEvents(List<EventDto> events) {
+        this.events = events;
     }
 }
