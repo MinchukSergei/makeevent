@@ -14,7 +14,7 @@ public class GroupDto {
     private String name;
     private String description;
     @DBRef(lazy = true)
-    private List<UserDetailsDto> users;
+    private List<UserDetailsDto> members;
     @DBRef
     @JsonIgnore
     private UserDetailsDto owner;
@@ -43,12 +43,12 @@ public class GroupDto {
         this.description = description;
     }
 
-    public List<UserDetailsDto> getUsers() {
-        return users;
+    public List<UserDetailsDto> getMembers() {
+        return members;
     }
 
-    public void setUsers(List<UserDetailsDto> users) {
-        this.users = users;
+    public void setMembers(List<UserDetailsDto> members) {
+        this.members = members;
     }
 
     public UserDetailsDto getOwner() {

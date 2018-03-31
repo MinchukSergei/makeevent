@@ -24,7 +24,7 @@ public class MainController {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-    @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+    @RequestMapping(value = "/getMembers", method = RequestMethod.GET)
     protected RequestResponse<List<UserDetailsDto>> getUsers() {
         RequestResponse<List<UserDetailsDto>> requestResponse = RequestResponse.createSuccessResponse();
         List<UserDetailsDto> users = userDetailsDtoRepository.findAll();
